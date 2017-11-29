@@ -9,13 +9,15 @@ import java.util.LinkedList;
 public class Station {
 
     private String name;
-    private LinkedList<Connection> connections = new LinkedList<>();
+    private int line;
+    private LinkedList<Station> connections = new LinkedList<>();
 
-    public Station(String name){
-
+    public Station(String name, int line){
+        this.name = name;
+        this.line = line;
     }
 
-    public void addConnection(Connection connection){
+    public void addConnection(Station connection){
         if(!connections.contains(connection)){
             connections.add(connection);
         }
